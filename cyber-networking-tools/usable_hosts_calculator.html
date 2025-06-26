@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usable Hosts Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=number] {
+            padding: 10px; font-size: 16px; width: 100px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 50%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Usable Hosts Calculator</h2>
+    <p>Enter CIDR Prefix (e.g., 24):</p>
+    <input type="number" id="cidrInput" min="0" max="32">
+    <br><br>
+    <button onclick="calculateUsableHosts()">Calculate</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr><th>CIDR Prefix</th><th>Total Hosts</th><th>Usable Hosts</th></tr>
+        <tr>
+            <td id="cidrVal"></td>
+            <td id="totalVal"></td>
+            <td id="usableVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateUsableHosts() {
+            const cidr = parseInt(document.getElementById('cidrInput').value);
+            if (isNaN(cidr) || cidr < 0 || cidr > 32) {
+                alert("Please enter a valid CIDR prefix between 0 and 32.");
+                return;
+            }
+
+            const total = Math.pow(2, 32 - cidr);
+            const usable = cidr >= 31 ? total : total - 2;
+
+            document.getElementById('cidrVal').textContent = `/${cidr}`;
+            document.getElementById('totalVal').textContent = total;
+            document.getElementById('usableVal').textContent = usable;
+            document.getElementById('resultTable').style.display = 'table';
+        }
+    </script>
+</body>
+</html>
