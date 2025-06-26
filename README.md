@@ -25,11 +25,6 @@ Convert any 8-bit binary number into its decimal equivalent using an interactive
 ### 2. Subnet Calculator
 Plan subnetting intelligently by entering a base network and desired number of hosts. This tool automatically calculates the best-fit subnet for each host group with details like:
 
-Allocated subnet (CIDR)
-Usable host count
-Network and broadcast addresses
-Subnet mask and prefix length
-
 🔗 [Launch Subnet Calculator](https://github.com/Bharathkasyap/Cybersecurity_Networking_Toolkit/blob/main/cyber-networking-tools/subnet_calculator.html)
 
 ### 🔧 Features:
