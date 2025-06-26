@@ -164,4 +164,4 @@ If you're a SOC Analyst, Threat Hunter, or working in GRC/Incident Response, the
 - Avoid subnet overlap in segmentation
 - Respond faster by identifying which subnet was hit during incidents
 
-> **Made by analysts, for analysts.**
+> **Made by Bharath Devulapalli, for all analysts.**
