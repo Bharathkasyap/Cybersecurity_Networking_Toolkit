@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIDR to Subnet Mask Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=number] {
+            padding: 10px; font-size: 16px; width: 80px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 60%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>CIDR to Subnet Mask Calculator</h2>
+    <p>Enter CIDR Prefix (e.g., 24):</p>
+    <input type="number" id="cidrInput" min="0" max="32">
+    <br><br>
+    <button onclick="calculateMask()">Calculate</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr>
+            <th>CIDR Prefix</th>
+            <th>Subnet Mask</th>
+            <th>Number of Usable Hosts</th>
+            <th>Wildcard Mask</th>
+        </tr>
+        <tr>
+            <td id="cidrVal"></td>
+            <td id="maskVal"></td>
+            <td id="hostsVal"></td>
+            <td id="wildcardVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateMask() {
+            let cidr = parseInt(document.getElementById('cidrInput').value);
+            if (cidr < 0 || cidr > 32 || isNaN(cidr)) return;
+
+            let mask = (0xffffffff << (32 - cidr)) >>> 0;
+            let maskParts = [(mask >>> 24) & 255, (mask >>> 16) & 255, (mask >>> 8) & 255, mask & 255];
+
+            let usableHosts = cidr === 32 ? 1 : cidr === 31 ? 2 : Math.pow(2, 32 - cidr) - 2;
+
+            let wildcard = maskParts.map(part => 255 - part).join(".");
+
+            document.getElementById('cidrVal').textContent = `/${cidr}`;
+            document.getElementById('maskVal').textContent = maskParts.join('.') ;
+            document.getElementById('hostsVal').textContent = usableHosts;
+            document.getElementById('wildcardVal').textContent = wildcard;
+
+            document.getElementById('resultTable').style.display = 'table';
+        }
+    </script>
+</body>
+</html>
