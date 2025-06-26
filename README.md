@@ -82,7 +82,7 @@ Quickly convert subnet masks to wildcard masks, useful for writing firewall rule
   
 ---
 
-6. Network ID Calculator
+### 6. Network ID Calculator
 Calculate the network ID based on a given IP address and subnet mask. Useful for access control policies and understanding network boundaries.
 
 🔗 [Launch Network ID Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_id_calculator.html)
@@ -94,7 +94,7 @@ Output: Network ID (e.g., IP: 192.168.1.10, Mask: 255.255.255.0 → Network ID: 
   
 ---
 
-7. Broadcast Address Calculator
+### 7. Broadcast Address Calculator
 Identify the broadcast address of a subnet using an IP and subnet mask. Essential for understanding communication boundaries within network segments.
 
 🔗 [Launch Broadcast Address Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/broadcast_address_calculator.html)
@@ -106,7 +106,7 @@ Identify the broadcast address of a subnet using an IP and subnet mask. Essentia
   
 ---
 
-8. Usable Hosts Calculator
+### 8. Usable Hosts Calculator
 Determine how many IPs are available for actual devices in any given subnet. Helps allocate the right CIDR block to each team or system.
 
 🔗 [Launch Usable Hosts Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/usable_hosts_calculator.html)
@@ -118,7 +118,7 @@ Determine how many IPs are available for actual devices in any given subnet. Hel
 - Use cases: Subnet planning, IP allocation for departments, security zones
 ---
 
-9. IP Range Calculator
+### 9. IP Range Calculator
 Calculate the usable IP range, broadcast address, and host span from any CIDR-based network block.
 
 🔗 [Launch IP Range Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/ip_range_calculator.html)
@@ -132,7 +132,7 @@ Calculate the usable IP range, broadcast address, and host span from any CIDR-ba
 
 ---
 
-10. Network Class Identifier
+### 10. Network Class Identifier
 Classify any IPv4 address into its class (A–E), view default subnet masks, and understand the network’s typical use case.
 
 🔗 [Launch Network Class Identifier](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_class_identifier.html)
