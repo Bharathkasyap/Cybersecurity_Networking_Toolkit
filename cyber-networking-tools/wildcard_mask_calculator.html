@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wildcard Mask Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=text] {
+            padding: 10px; font-size: 16px; width: 220px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 60%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Wildcard Mask Calculator</h2>
+    <p>Enter Subnet Mask (e.g., 255.255.255.0):</p>
+    <input type="text" id="maskInput" placeholder="255.255.255.0">
+    <br><br>
+    <button onclick="calculateWildcard()">Calculate</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr><th>Subnet Mask</th><th>Wildcard Mask</th></tr>
+        <tr>
+            <td id="subnetVal"></td>
+            <td id="wildcardVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateWildcard() {
+            const input = document.getElementById('maskInput').value.trim();
+            const parts = input.split('.').map(p => parseInt(p));
+
+            if (parts.length !== 4 || parts.some(p => isNaN(p) || p < 0 || p > 255)) {
+                alert("Please enter a valid subnet mask.");
+                return;
+            }
+
+            const wildcard = parts.map(p => 255 - p);
+
+            document.getElementById('subnetVal').textContent = parts.join('.');
+            document.getElementById('wildcardVal').textContent = wildcard.join('.');
+            document.getElementById('resultTable').style.display = 'table';
+        }
+    </script>
+</body>
+</html>
