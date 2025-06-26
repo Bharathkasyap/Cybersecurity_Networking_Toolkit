@@ -19,7 +19,7 @@ Whether you're handling alert triage, firewall rule reviews, or setting up segme
 ### 1. Binary to Decimal Converter
 Convert any 8-bit binary number into its decimal equivalent using an interactive visual table.
 
-🔗 [Launch Binary to Decimal Converter](https://github.com/Bharathkasyap/Cybersecurity_Networking_Toolkit/blob/main/cyber-networking-tools/binary_to_decimal_converter.html)
+🔗 [Launch Binary to Decimal Converter](https://bharathkasyap.github.io/cyber-networking-tools/binary_to_decimal_converter.html)
 
 ---
 
