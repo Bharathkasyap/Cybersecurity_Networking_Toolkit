@@ -19,13 +19,13 @@ Whether you're handling alert triage, firewall rule reviews, or setting up segme
 ### 1. Binary to Decimal Converter
 Convert any 8-bit binary number into its decimal equivalent using an interactive visual table.
 
-🔗 [Launch Binary to Decimal Converter](https://bharathkasyap.github.io/cyber-networking-tools/binary_to_decimal_converter.html)
+🔗 [Launch Binary to Decimal Converter](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/binary_to_decimal_converter.html)
 
 
 ### 2. Subnet Calculator
 Plan subnetting intelligently by entering a base network and desired number of hosts. This tool automatically calculates the best-fit subnet for each host group with details like:
 
-🔗 [Launch Subnet Calculator](https://bharathkasyap.github.io/cyber-networking-tools/subnet_calculator.html)
+🔗 [Launch Subnet Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/subnet_calculator.html)
 
 ### 🔧 Features:
 Enter base network IP (e.g., 192.168.0.0)
