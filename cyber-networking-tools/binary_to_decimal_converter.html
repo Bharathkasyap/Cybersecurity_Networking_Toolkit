@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary to Decimal Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input[type=text] {
+            width: 200px; padding: 10px; font-size: 18px; text-align: center;
+        }
+        table {
+            margin: 20px auto; border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 18px;
+        }
+        .highlight { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Binary to Decimal Converter</h2>
+    <p>Enter 8-bit binary (e.g., 10010110):</p>
+    <input type="text" id="binaryInput" maxlength="8" oninput="convertBinary()">
+
+    <table>
+        <tr id="headers">
+            <th>128</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th>
+        </tr>
+        <tr id="binaryRow">
+            <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+        </tr>
+    </table>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function convertBinary() {
+            const input = document.getElementById('binaryInput').value;
+            const binaryRow = document.getElementById('binaryRow').children;
+            const weights = [128, 64, 32, 16, 8, 4, 2, 1];
+            let total = 0;
+            let displayText = [];
+
+            for (let i = 0; i < 8; i++) {
+                const bit = input[i] === '1' ? '1' : '0';
+                binaryRow[i].textContent = bit;
+                if (bit === '1') {
+                    binaryRow[i].classList.add("highlight");
+                    total += weights[i];
+                    displayText.push(weights[i]);
+                } else {
+                    binaryRow[i].classList.remove("highlight");
+                }
+            }
+
+            if (input.length === 8 && /^[01]+$/.test(input)) {
+                document.getElementById("result").innerHTML = displayText.join(" + ") + " = <strong>" + total + "</strong>";
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
