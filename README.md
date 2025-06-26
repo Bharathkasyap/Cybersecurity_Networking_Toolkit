@@ -61,6 +61,52 @@ Quickly convert subnet masks to wildcard masks, useful for writing firewall rule
 
 ---
 
+6. Network ID Calculator
+Calculate the network ID based on a given IP address and subnet mask. Useful for access control policies and understanding network boundaries.
+
+🔗 [Launch Network ID Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_id_calculator.html)
+
+---
+
+7. Broadcast Address Calculator
+Identify the broadcast address of a subnet using an IP and subnet mask. Essential for understanding communication boundaries within network segments.
+
+🔗 [Launch Broadcast Address Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/broadcast_address_calculator.html)
+
+---
+
+8. Usable Hosts Calculator
+Determine how many IPs are available for actual devices in any given subnet. Helps allocate the right CIDR block to each team or system.
+
+🔗 [Launch Usable Hosts Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/usable_hosts_calculator.html)
+
+---
+
+9. IP Range Calculator
+Calculate the usable IP range, broadcast address, and host span from any CIDR-based network block.
+
+🔗 [Launch IP Range Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/ip_range_calculator.html)
+
+---
+
+10. Network Class Identifier
+Classify any IPv4 address into its class (A–E), view default subnet masks, and understand the network’s typical use case.
+
+🔗 [Launch Network Class Identifier](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_class_identifier.html)
+
+### 🔧 Features:
+Input: Any IPv4 address (e.g., 192.168.1.1)
+
+Output:
+
+Network class (A/B/C/D/E)
+
+Default subnet mask
+
+Intended usage (e.g., large networks, multicast)
+
+Helpful for understanding address ranges and class-based planning
+---
 
 ## 📂 Upcoming Tools
 More tools will be added here soon:
