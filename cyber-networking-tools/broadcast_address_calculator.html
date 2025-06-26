@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Broadcast Address Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=text] {
+            padding: 10px; font-size: 16px; width: 260px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 60%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Broadcast Address Calculator</h2>
+    <p>Enter IP Address and Subnet Mask:</p>
+    <input type="text" id="ipInput" placeholder="192.168.1.10">
+    <input type="text" id="maskInput" placeholder="255.255.255.0">
+    <br><br>
+    <button onclick="calculateBroadcast()">Calculate</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr><th>IP Address</th><th>Subnet Mask</th><th>Broadcast Address</th></tr>
+        <tr>
+            <td id="ipVal"></td>
+            <td id="maskVal"></td>
+            <td id="broadcastVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateBroadcast() {
+            const ip = document.getElementById('ipInput').value.trim();
+            const mask = document.getElementById('maskInput').value.trim();
+
+            const ipParts = ip.split('.').map(p => parseInt(p));
+            const maskParts = mask.split('.').map(p => parseInt(p));
+
+            if (ipParts.length !== 4 || maskParts.length !== 4 ||
+                ipParts.some(p => isNaN(p) || p < 0 || p > 255) ||
+                maskParts.some(p => isNaN(p) || p < 0 || p > 255)) {
+                alert("Enter valid IP and subnet mask.");
+                return;
+            }
+
+            const broadcast = ipParts.map((p, i) => (p & maskParts[i]) | (255 - maskParts[i])).join('.');
+
+            document.getElementById('ipVal').textContent = ip;
+            document.getElementById('maskVal').textContent = mask;
+            document.getElementById('broadcastVal').textContent = broadcast;
+            document.getElementById('resultTable').style.display = 'table';
+        }
+    </script>
+</body>
+</html>
