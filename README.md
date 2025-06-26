@@ -21,6 +21,7 @@ Convert any 8-bit binary number into its decimal equivalent using an interactive
 
 🔗 [Launch Binary to Decimal Converter](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/binary_to_decimal_converter.html)
 
+---
 
 ### 2. Subnet Calculator
 Plan subnetting intelligently by entering a base network and desired number of hosts. This tool automatically calculates the best-fit subnet for each host group with details like:
@@ -49,6 +50,13 @@ More tools will be added here soon:
 Stay tuned and feel free to contribute!
 
 ---
+### 3. CIDR to Subnet Mask Calculator
+Convert CIDR notation (e.g., /26) into its corresponding subnet mask, wildcard mask, and usable host count.
+
+🔗 [Launch CIDR to Subnet Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/cidr_calculator.html)
+
+---
+
 
 ## 🧠 For Cybersecurity Analysts
 If you're a SOC Analyst, Threat Hunter, or working in GRC/Incident Response, these tools will help you:
