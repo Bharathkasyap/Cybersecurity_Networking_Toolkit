@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Range Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=text] {
+            padding: 10px; font-size: 16px; width: 260px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 70%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>IP Range Calculator</h2>
+    <p>Enter Network Address (e.g., 192.168.1.0/24):</p>
+    <input type="text" id="networkInput" placeholder="192.168.1.0/24">
+    <br><br>
+    <button onclick="calculateRange()">Calculate</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr><th>Network</th><th>First Usable IP</th><th>Last Usable IP</th><th>Broadcast Address</th></tr>
+        <tr>
+            <td id="networkVal"></td>
+            <td id="firstVal"></td>
+            <td id="lastVal"></td>
+            <td id="broadcastVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateRange() {
+            const input = document.getElementById('networkInput').value.trim();
+            const [ip, prefix] = input.split('/');
+            const parts = ip.split('.').map(p => parseInt(p));
+            const cidr = parseInt(prefix);
+
+            if (parts.length !== 4 || parts.some(p => isNaN(p) || p < 0 || p > 255) || isNaN(cidr) || cidr < 0 || cidr > 32) {
+                alert("Please enter a valid CIDR notation (e.g., 192.168.1.0/24).");
+                return;
+            }
+
+            const ipInt = (parts[0]<<24) + (parts[1]<<16) + (parts[2]<<8) + parts[3];
+            const total = Math.pow(2, 32 - cidr);
+            const network = ipInt;
+            const first = cidr >= 31 ? ipInt : ipInt + 1;
+            const last = cidr >= 31 ? ipInt + total - 1 : ipInt + total - 2;
+            const broadcast = ipInt + total - 1;
+
+            document.getElementById('networkVal').textContent = `${ip}/${cidr}`;
+            document.getElementById('firstVal').textContent = toIP(first);
+            document.getElementById('lastVal').textContent = toIP(last);
+            document.getElementById('broadcastVal').textContent = toIP(broadcast);
+            document.getElementById('resultTable').style.display = 'table';
+        }
+
+        function toIP(intVal) {
+            return [(intVal >>> 24), (intVal >>> 16 & 255), (intVal >>> 8 & 255), (intVal & 255)].join('.')
+        }
+    </script>
+</body>
+</html>
