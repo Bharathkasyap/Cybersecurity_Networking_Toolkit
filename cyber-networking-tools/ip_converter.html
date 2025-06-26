@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Address Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=text] {
+            padding: 10px; font-size: 16px; width: 260px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 80%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>IP Address Converter</h2>
+    <p>Enter IP Address (e.g., 192.168.1.1):</p>
+    <input type="text" id="ipInput" placeholder="192.168.1.1">
+    <br><br>
+    <button onclick="convertIP()">Convert</button>
+
+    <table id="resultTable" style="display: none;">
+        <tr><th>Decimal</th><th>Binary</th><th>Hexadecimal</th></tr>
+        <tr>
+            <td id="decVal"></td>
+            <td id="binVal"></td>
+            <td id="hexVal"></td>
+        </tr>
+    </table>
+
+    <script>
+        function convertIP() {
+            const input = document.getElementById('ipInput').value.trim();
+            const parts = input.split(".").map(p => parseInt(p));
+            if (parts.length !== 4 || parts.some(p => isNaN(p) || p < 0 || p > 255)) {
+                alert("Please enter a valid IPv4 address.");
+                return;
+            }
+
+            const binary = parts.map(p => p.toString(2).padStart(8, '0')).join('.');
+            const hex = parts.map(p => p.toString(16).padStart(2, '0')).join('.');
+
+            document.getElementById('decVal').textContent = input;
+            document.getElementById('binVal').textContent = binary;
+            document.getElementById('hexVal').textContent = hex.toUpperCase();
+            document.getElementById('resultTable').style.display = 'table';
+        }
+    </script>
+</body>
+</html>
