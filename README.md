@@ -47,6 +47,13 @@ Convert CIDR notation (e.g., /26) into its corresponding subnet mask, wildcard m
 
 ---
 
+### 4. IP Address Converter
+Convert IPv4 addresses into binary and hexadecimal formats instantly. Helps during packet analysis, firewall rule reviews, and log investigations.
+
+🔗 [Launch IP Address Converter](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/ip_converter.html)
+
+---
+
 
 ## 📂 Upcoming Tools
 More tools will be added here soon:
