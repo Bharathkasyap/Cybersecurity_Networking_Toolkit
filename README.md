@@ -40,6 +40,14 @@ It auto-generates:
 
 ---
 
+### 3. CIDR to Subnet Mask Calculator
+Convert CIDR notation (e.g., /26) into its corresponding subnet mask, wildcard mask, and usable host count.
+
+🔗 [Launch CIDR to Subnet Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/cidr_calculator.html)
+
+---
+
+
 ## 📂 Upcoming Tools
 More tools will be added here soon:
 - Subnet calculator with CIDR → usable IPs breakdown
@@ -50,13 +58,6 @@ More tools will be added here soon:
 Stay tuned and feel free to contribute!
 
 ---
-### 3. CIDR to Subnet Mask Calculator
-Convert CIDR notation (e.g., /26) into its corresponding subnet mask, wildcard mask, and usable host count.
-
-🔗 [Launch CIDR to Subnet Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/cidr_calculator.html)
-
----
-
 
 ## 🧠 For Cybersecurity Analysts
 If you're a SOC Analyst, Threat Hunter, or working in GRC/Incident Response, these tools will help you:
