@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subnet Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+        input[type=text] {
+            padding: 10px; font-size: 16px; width: 280px;
+        }
+        input[type=number] {
+            padding: 10px; font-size: 16px; width: 100px;
+        }
+        button {
+            padding: 10px 20px; font-size: 16px; margin-top: 10px;
+        }
+        table {
+            margin: 30px auto; border-collapse: collapse; width: 80%;
+        }
+        th, td {
+            border: 1px solid #ccc; padding: 10px; font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Subnet Calculator</h2>
+    <p>Enter Base Network IP (e.g., 192.168.0.0):</p>
+    <input type="text" id="networkInput" placeholder="192.168.0.0">
+    <p>Enter required number of hosts (comma separated):</p>
+    <input type="text" id="hostCounts" placeholder="60,30,12,6">
+    <br>
+    <button onclick="calculateSubnets()">Calculate</button>
+
+    <table id="resultsTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Required Hosts</th>
+                <th>Allocated Subnet</th>
+                <th>Usable Hosts</th>
+                <th>Network Address</th>
+                <th>Broadcast Address</th>
+                <th>Subnet Mask</th>
+                <th>Prefix</th>
+            </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+    </table>
+
+    <script>
+        function calculateSubnets() {
+            const ip = document.getElementById('networkInput').value;
+            const hostStr = document.getElementById('hostCounts').value;
+            const hostCounts = hostStr.split(',').map(h => parseInt(h.trim())).sort((a, b) => b - a);
+            const resultsBody = document.getElementById('resultsBody');
+            resultsBody.innerHTML = '';
+
+            let ipParts = ip.split('.').map(n => parseInt(n));
+            let currentIP = (ipParts[0]<<24) + (ipParts[1]<<16) + (ipParts[2]<<8) + ipParts[3];
+
+            for (let hosts of hostCounts) {
+                let total = hosts + 2;
+                let bits = Math.ceil(Math.log2(total));
+                let size = Math.pow(2, bits);
+                let prefix = 32 - bits;
+                let mask = 0xFFFFFFFF << bits >>> 0;
+                let maskParts = [(mask>>>24)&255, (mask>>>16)&255, (mask>>>8)&255, mask&255];
+                let network = currentIP;
+                let broadcast = currentIP + size - 1;
+
+                const row = `
+                    <tr>
+                        <td>${hosts}</td>
+                        <td>${intToIP(network)}/${prefix}</td>
+                        <td>${size - 2}</td>
+                        <td>${intToIP(network)}</td>
+                        <td>${intToIP(broadcast)}</td>
+                        <td>${maskParts.join('.')}</td>
+                        <td>/${prefix}</td>
+                    </tr>`;
+                resultsBody.innerHTML += row;
+
+                currentIP = broadcast + 1;
+            }
+            document.getElementById('resultsTable').style.display = 'table';
+        }
+
+        function intToIP(int) {
+            return [(int >>> 24), (int >>> 16 & 255), (int >>> 8 & 255), (int & 255)].join('.');
+        }
+    </script>
+</body>
+</html>
