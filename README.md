@@ -54,6 +54,13 @@ Convert IPv4 addresses into binary and hexadecimal formats instantly. Helps duri
 
 ---
 
+### 5. Wildcard Mask Calculator
+Quickly convert subnet masks to wildcard masks, useful for writing firewall rules and ACL conditions.
+
+🔗 [Launch Wildcard Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/wildcard_mask_calculator.html)
+
+---
+
 
 ## 📂 Upcoming Tools
 More tools will be added here soon:
