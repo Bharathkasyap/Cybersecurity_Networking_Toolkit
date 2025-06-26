@@ -45,6 +45,14 @@ Convert CIDR notation (e.g., /26) into its corresponding subnet mask, wildcard m
 
 🔗 [Launch CIDR to Subnet Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/cidr_calculator.html)
 
+### 🔧 Features:
+- Enter a CIDR prefix like /24
+
+### It calculates:
+- Subnet mask (e.g., 255.255.255.0)
+- Number of usable hosts
+- Wildcard mask (used in ACLs and firewalls)
+  
 ---
 
 ### 4. IP Address Converter
@@ -52,6 +60,14 @@ Convert IPv4 addresses into binary and hexadecimal formats instantly. Helps duri
 
 🔗 [Launch IP Address Converter](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/ip_converter.html)
 
+### 🔧 Features:
+- Enter any IPv4 address (e.g., 192.168.1.1)
+
+### Instantly shows:
+- Binary format (e.g., 11000000.10101000.00000001.00000001)
+- Hexadecimal format (e.g., C0.A8.01.01)
+- Original Decimal format
+  
 ---
 
 ### 5. Wildcard Mask Calculator
@@ -59,6 +75,11 @@ Quickly convert subnet masks to wildcard masks, useful for writing firewall rule
 
 🔗 [Launch Wildcard Mask Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/wildcard_mask_calculator.html)
 
+###🔧 Features:
+- Input: Standard subnet mask (e.g., 255.255.255.0)
+- Output: Wildcard mask (e.g., 0.0.0.255)
+- Useful in: ACLs, firewall rule matching, route filtering
+  
 ---
 
 6. Network ID Calculator
@@ -66,6 +87,11 @@ Calculate the network ID based on a given IP address and subnet mask. Useful for
 
 🔗 [Launch Network ID Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_id_calculator.html)
 
+### 🔧 Features:
+- Input: IP Address and Subnet Mask
+Output: Network ID (e.g., IP: 192.168.1.10, Mask: 255.255.255.0 → Network ID: 192.168.1.0)
+- Purpose: Helps during IP planning, access control, and network scoping
+  
 ---
 
 7. Broadcast Address Calculator
@@ -73,6 +99,11 @@ Identify the broadcast address of a subnet using an IP and subnet mask. Essentia
 
 🔗 [Launch Broadcast Address Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/broadcast_address_calculator.html)
 
+### 🔧 Features:
+- Input: IP Address and Subnet Mask
+- Output: Calculates the Broadcast Address (used to send data to all devices on the subnet)
+- Helpful during: Network planning, scanning scope definition, DHCP, and SOC alert zones
+  
 ---
 
 8. Usable Hosts Calculator
@@ -80,12 +111,24 @@ Determine how many IPs are available for actual devices in any given subnet. Hel
 
 🔗 [Launch Usable Hosts Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/usable_hosts_calculator.html)
 
+### 🔧 Features:
+- Input: CIDR prefix (e.g., /24)
+- Output: Total number of IPs in the subnet
+- Number of usable hosts (excludes network and broadcast addresses)
+- Use cases: Subnet planning, IP allocation for departments, security zones
 ---
 
 9. IP Range Calculator
 Calculate the usable IP range, broadcast address, and host span from any CIDR-based network block.
 
 🔗 [Launch IP Range Calculator](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/ip_range_calculator.html)
+
+### 🔧 Features:
+- Input: Network address in CIDR format (e.g., 192.168.1.0/24)
+- Output: First usable IP
+- Last usable IP
+- Broadcast address
+- Use case: Quickly define scan ranges, host distribution, and access control zones
 
 ---
 
@@ -95,17 +138,12 @@ Classify any IPv4 address into its class (A–E), view default subnet masks, and
 🔗 [Launch Network Class Identifier](https://bharathkasyap.github.io/Cybersecurity_Networking_Toolkit/cyber-networking-tools/network_class_identifier.html)
 
 ### 🔧 Features:
-Input: Any IPv4 address (e.g., 192.168.1.1)
-
-Output:
-
-Network class (A/B/C/D/E)
-
-Default subnet mask
-
-Intended usage (e.g., large networks, multicast)
-
-Helpful for understanding address ranges and class-based planning
+- Input: Any IPv4 address (e.g., 192.168.1.1)
+- Output: Network class (A/B/C/D/E)
+- Default subnet mask
+- Intended usage (e.g., large networks, multicast)
+- Helpful for understanding address ranges and class-based planning
+- 
 ---
 
 ## 📂 Upcoming Tools
